@@ -1,0 +1,220 @@
+.attribute-content{
+    background: #262d47;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    border-radius: 10px;
+}
+.attribute-content .left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.attribute-content .right{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.attribute-content .left button{
+    color: #262d47;
+    background: white;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 120%;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    align-self: flex-end;
+}
+.attribute-content .left button:disabled{
+    background: rgb(196, 187, 187);
+}
+.attribute-content .right .attr-list{
+    width: 95%;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.attribute-content .right .attr-list > span{
+    padding: 2px;
+    border-bottom: 2px solid white;
+    font-size: 100%; 
+    color: white;   
+}
+.newPush{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: #262d47;
+    width: 40%;
+    height: 40vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px -1px black;
+    transform: translate(-50%,-50%) scale(0);
+    transition: .5s;
+}
+.newPush.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.newPush input{
+    text-align: center;
+    border: none;
+    color: white;   
+    border-bottom: 1px solid white;
+    background: none;
+    outline: none;
+    width: 100%;
+    margin: 10px 0;
+}
+.newPush button{
+    background: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.newPush button:hover{
+    filter: brightness(.7);
+}
+
+.attribute-content .right .attr-list .atr{
+    padding: 0 !important; 
+    margin: 0 2px !important;
+    width: auto;
+    cursor: pointer;
+}
+.divError {
+    width: 45%;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 20px 0px black;
+}
+.divError span{
+    width: 100%;
+    padding: 10px;
+    background: white;
+}
+
+.divError .crs{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    font-weight: bolder;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.attribute-content .right .attr-list > span{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+.attribute-content .right .attr-list > span:nth-of-type(2) span:nth-of-type(1){
+    padding-right: 20px;
+}
+.attribute-content .right .attr-list > span:nth-of-type(2) span:nth-of-type(1) span{
+    position: relative;
+    margin-right: 5px !important;
+}
+.attribute-content .right .attr-list > span:nth-of-type(2) span:nth-of-type(1) span:hover .crooss{
+    display: block;
+}
+.attribute-content .right .attr-list > span:nth-of-type(2) span:nth-of-type(1) span .crooss{
+    position: absolute;
+    background: red;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 2px;
+    font-size: 70%;
+    border-radius: 5px;
+    display: none;
+}
+.attribute-content .right .attr-list > span:nth-of-type(1) > span:nth-of-type(2){
+    color: red;
+    cursor: pointer;
+    letter-spacing: .5px;
+}
+.attribute-content .right .attr-list > span:nth-of-type(2) > span:nth-of-type(2){
+    color: rgb(0, 247, 144);
+    cursor: pointer;
+    letter-spacing: .5px;
+}
+.attribute-content .right .attr-list > span:nth-of-type(1) > span:nth-of-type(2):hover{
+    color: rgb(230, 121, 121);
+}
+.attribute-content .right .attr-list > span:nth-of-type(2) > span:nth-of-type(2):hover{
+    color: rgb(9, 179, 108);
+}
+
+@media screen and (max-width: 650px) {
+    .attribute-content{
+        flex-direction: column;
+    }
+    .attribute-content .left,
+    .attribute-content .right{
+        width: 100%;
+    }
+    .attribute-content .right .attr-list > span:nth-of-type(2){
+        display: flex;
+        flex-direction: column;
+    }
+    .attribute-content .right .attr-list > span:nth-of-type(2) span{
+        width: 100%;
+        margin: 2px;
+    }
+    .attribute-content .right .attr-list > span:nth-of-type(2) > span:nth-of-type(1){
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .attribute-content .right .attr-list > span:nth-of-type(2) > span:nth-of-type(1) span{
+        width: auto;
+    }
+    .attribute-content .right .attr-list > span:nth-of-type(2) > span:nth-of-type(2){
+        text-align: right;
+    }
+    .newPush{
+        width: 90%;
+        height: 60vh;
+    }
+
+
+}

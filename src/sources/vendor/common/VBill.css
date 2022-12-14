@@ -1,0 +1,126 @@
+.order-bill-management * {
+    font-size: 20px;
+}
+
+.order-bill-management .ticket {
+    width: 667px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.order-bill-management img {
+    width: 100px;
+    margin: 4px 0;
+}
+
+.order-bill-management tr,
+.order-bill-management table {
+    width: 100%;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.order-bill-management td.description,
+.order-bill-management th.description {
+    width: 500px;
+    padding: 15px 5px;
+}
+
+.order-bill-management td.quantity,
+.order-bill-management th.quantity {
+    width: 50px;
+    text-align: center;
+    word-break: break-all;
+}
+.order-bill-management td.price,
+.order-bill-management th.price {
+    width: 117px;
+    text-align: right;
+    word-break: break-all;
+}
+.order-bill-management .centered {
+    text-align: center;
+    align-content: center;
+}
+#dtl{
+    font-size: 20px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+}
+#dtl span{
+    display: flex;
+    flex-direction: column;
+}
+#dtl span span:nth-child(1){
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 667px) {
+    .order-bill-management * {
+        font-size: 20px;
+    }
+    
+    .order-bill-management .ticket {
+        width: 95%;
+        margin: 0 2.5%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+    }
+    .order-bill-management img {
+        width: 100px;
+        margin: 4px 0;
+        margin-top: 10px;
+    }
+    
+    .order-bill-management tr,
+    .order-bill-management table {
+        width: 100%;
+        border-top: 1px solid black;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+    }
+    
+    .order-bill-management td.description,
+    .order-bill-management th.description {
+        width: 60%;
+        padding: 15px 5px;
+    }
+    
+    .order-bill-management td.quantity,
+    .order-bill-management th.quantity {
+        width: 15%;
+        text-align: center;
+        word-break: break-all;
+    }
+    .order-bill-management td.price,
+    .order-bill-management th.price {
+        width: 20%;
+        text-align: right;
+        word-break: break-all;
+    }
+    .order-bill-management .centered {
+        margin-top: 30px;
+        text-align: center;
+        align-content: center;
+    }
+    #dtl{
+        font-size: 10px;
+    }
+}
+@media print {
+    .hidden-print,
+    .hidden-print * {
+        display: none !important;
+    }
+}

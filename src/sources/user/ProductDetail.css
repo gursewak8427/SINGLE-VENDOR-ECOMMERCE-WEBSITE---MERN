@@ -1,0 +1,578 @@
+.productDtl{
+    width: 100%;
+    min-height: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px 0;
+    margin-bottom: 50px;
+}
+.alreadyVisited{
+    box-shadow: 0 0 10px 10px black;
+}
+.fromHistoryIndicatorForProduct{
+    background: teal;
+    color: white;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    padding: 5px 10px;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0 0 22px -2px black;
+}
+/* product image side */
+.productDtl .images{
+    position: sticky;
+    top: 80px;
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background: white;
+}
+.productDtl .images .imagesDtl{
+    width: 100%;
+    min-height: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: stretch;
+}
+.productDtl .images .imagesDtl .list{
+    width: 70px;
+    height: auto;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.productDtl .images .imagesDtl .list::-webkit-scrollbar{
+    width: 0;
+    visibility: hidden;
+}
+
+.productDtl .images .imagesDtl .list img{
+    width: 100%;
+    height: auto;
+    margin: 2px;
+    border: 2px solid transparent;
+    cursor: pointer;    
+}
+.productDtl .images .imagesDtl .list img.active,
+.productDtl .images .imagesDtl .list img:hover{
+    border: 2px solid orangered;
+}
+.productDtl .images .imagesDtl .bigImg{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.productDtl .images .imagesDtl .bigImg img{
+    width: 100%;
+    height: auto;
+}
+.productDtl .images .buttons{
+    width: calc(100% - 60px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px 0;
+} 
+.productDtl .images .buttons.disabled button{
+    pointer-events: none;
+    filter: brightness(0.5);
+}
+.productDtl .images .buttons button{
+    width: 75%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    font-size: 70%;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: white;
+} 
+.productDtl .images .buttons button:hover{
+    filter: brightness(.9); 
+    box-shadow: -2px 5px 10px -2px grey;
+}
+
+.productDtl .images .buttons button:nth-of-type(1){
+    background: orange;
+}
+.productDtl .images .buttons button:nth-of-type(2){
+    background: orangered;
+}
+
+/* product details side */
+.productDtl .details{
+    width: 55%;
+    min-height: 500px;
+    height: auto;
+    padding: 10px 0;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 90%;
+}
+.productDtl .details > div{
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.productDtl .details > div.department{
+    font-size: 70%;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: grey;
+    margin-top: -5px;
+}
+.productDtl .details > div.name{
+    font-weight: bold;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+}
+.productDtl .details > div.name .shortDisc{
+    font-weight: lighter;
+    font-size: 80%;
+}
+.productDtl .details > div.name span.attributes{
+    padding: 0;
+    margin: 0 5px;
+}
+.productDtl .details > div.name span.attributes span{
+    margin: 1px;
+    font-size: 80%;
+    color: rgb(255, 136, 0);
+}
+
+.productDtl .details > div.pricing{
+    text-transform: capitalize;
+    font-size: 130%;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.productDtl .details > div.pricing .minMax{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    text-transform: capitalize;
+    font-size: 110%;
+    margin-left: -5px;
+}
+.productDtl .details > div.pricing .mrp{
+    text-decoration: line-through;
+    color: grey;
+    font-weight: lighter;
+    font-size: 70%;
+    margin: 0 5px 3px;
+}
+.productDtl .details > div.pricing .off{
+    font-weight: bolder;
+    margin-left: 7px;
+    margin-bottom: 4px;
+    color: rgb(13, 143, 45) !important;
+}
+
+.productDtl .details > div.pricing > span{
+    text-decoration: line-through;
+    font-size: 70%;
+    color: grey;
+    margin: 0 5px;
+    font-weight: normal;
+}
+.productDtl .details > div.pricing > span.off{
+    text-decoration: none;
+    color: orange;
+    font-size: 80%;
+}
+.productDtl .details > div.varients{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.productDtl .details > div.varients .rowAttrs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.productDtl .productDisc{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.productDtl .productDisc .discription{
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+}
+.productDtl .productDisc .discription span{
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: 100%;
+}
+
+
+.productDtl .details > div.varients label{
+    width: 100%;
+    margin: 0;
+    font-size: 80%;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+}
+.productDtl .details > div.varients ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.productDtl .details > div.varients .clear{
+    background: #f73838;
+    padding: 7px 10px 5px;
+    color: white;
+    font-size: 80%;
+    align-self: flex-end;
+    margin-right: 20px;
+    border-radius: 5px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.productDtl .details > div.varients .clear.a{
+    visibility: visible;
+}
+    
+.productDtl .details > div.varients ul li{
+    margin-right: 5px;
+    background: whitesmoke;
+    padding: 1px 7px;
+    cursor: pointer;
+    border: 1px solid grey;
+    border-radius: 5px;
+    min-width: 30px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.productDtl .details  li.sV{
+    color: red;
+    margin: 0 !important;
+    margin-left: 10px !important;
+    text-decoration: underline;
+}
+.productDtl .details > div.varients ul li.active{
+    background: orange;
+    color: white;
+}
+.productDtl .details > div.varients ul li.disabled {
+    pointer-events: none;
+    background: #bab6b6;
+    color: #625d5d;
+    border: 1px dotted rgb(65, 64, 64);
+}
+.productDtl .details > div.varients ul li:hover{
+    background: rgba(255, 166, 0, 0.5);
+    border: 1px solid orange;
+}
+.productDtl .details > div.productDtlDiv{
+    width: 100%;
+}
+.productDtl .details > div.productDtlDiv label{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+}
+.productDtl .details > div.productDtlDiv label ._ad,
+    .productDtl .details > div.productDtlDiv label ._ac{
+        display: none;
+}
+.productDtl .details > div.productDtlDiv label ._ad.active,
+    .productDtl .details > div.productDtlDiv label ._ac.active{
+        display: block;
+}
+.productDtl .details > div.productDtlDiv label:hover{
+    cursor: pointer;
+}
+
+.productDtl .details > div.productDtlDiv .productDetail{
+    width: 100%;
+    list-style-type: none;
+    padding: 10px;
+    display: none;
+    border-bottom: 1px solid grey;
+}
+.productDtl .details > div.productDtlDiv .productDetail.active{
+    display: block;
+}
+.productDtl .details > div.productDtlDiv .productDetail.active label{
+    background: red;
+}
+.productDtl .details > div.productDtlDiv .productDetail li{
+    width: 100%;
+    margin: 3px 0;
+    display: flex;
+    flex-direction: row;
+}
+.productDtl .details > div.productDtlDiv .productDetail li span{
+    width: auto;
+    padding: 3px 10px;
+    font-size: 85%;
+}
+.productDtl .details > div.productDtlDiv .productDetail li span:nth-of-type(1) {
+    min-width: 20%;
+    color: #6b7280;
+    word-wrap: break-word;
+    text-transform: capitalize;
+}
+.productDtl .details > div.productDtlDiv .productDetail li span:nth-of-type(2){
+    color: black;
+    word-wrap: break-word;
+    text-transform: capitalize;
+}
+.productDtl .details > div.ratingReview{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.productDtl .details > div.ratingReview label{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 100%;
+    margin: 10px 0;
+}
+.productDtl .details > div.ratingReview label span:nth-of-type(1){
+    font-weight: bolder;
+    font-size: 130%;
+}
+.productDtl .details > div.ratingReview label span:nth-of-type(2){
+    font-size: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.productDtl .details > div.ratingReview label span:nth-of-type(2) span.rate{
+    padding: 5px 10px 1px 10px;
+    border-radius: 30px;
+    color: white;
+    margin: 0 10px;
+    font-size: 95%;
+}
+.productDtl .details > div.ratingReview label span:nth-of-type(2) span.A{
+    background: rgb(7, 211, 92);
+}
+.productDtl .details > div.ratingReview label span:nth-of-type(2) span:nth-of-type(2){
+    font-size: 100%;
+    color: grey;
+}
+.productDtl .details > div.ratingReview label span:nth-of-type(3){
+    padding: 7px 19px;
+    background: rgb(59, 165, 207);
+    font-size: 110%;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.productDtl .details > div.ratingReview label span:nth-of-type(3):hover{
+    filter: contrast(1.5);
+}
+.productDtl .details > div.ratingReview .allImages{
+    width: 100%;
+    margin: 10px 0;
+    background: whitesmoke;
+}
+.productDtl .details > div.ratingReview .allImages label{
+    padding: 0 10px;
+    text-transform: capitalize;
+}
+.productDtl .details > div.ratingReview .allImages .imgs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.productDtl .details > div.ratingReview .allImages .imgs img{
+    width: 50px;
+    height: 55px;
+    margin: 5px;
+}
+.productDtl .details > div.ratingReview .allReviews{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.productDtl .details > div.ratingReview .allReviews .review{
+    width: 100%;
+    border-top: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+}
+.productDtl .details > div.ratingReview .allReviews .review > span:nth-of-type(1){
+    font-size: 90%;
+    margin: 10px ;
+}
+.productDtl .details > div.ratingReview .allReviews .review > span:nth-of-type(2){
+    font-size: 80%;
+    width: 100%;
+    padding: 0 5px;
+    text-align: right;
+}
+.productDtl .details > div.ratingReview .allReviews .review > span span.rate{
+    padding: 7px 7px 5px !important;
+    font-size: 100% !important;
+    border-radius: 20px;
+    font-weight: bolder;
+}
+.productDtl .details > div.ratingReview .allReviews .review > span span.A{
+    background: rgb(8, 190, 90);
+    color: white;
+    padding: 4px 6px 3px 6px;
+    font-size: 80%;
+}
+.productDtl .details > div.ratingReview .allReviews .review > span span.text{
+    padding: 3px 5px;
+    word-wrap: break-word;
+}
+.productDtl .details > div.ratingReview .bottom{
+    font-size: 80%;
+    padding: 0 10px;
+    color: blue;
+    cursor: pointer;
+}
+.ratingNowDiv{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.ratingNowDiv.active{
+    display: flex;
+}
+.ratingNowDiv select{
+    padding: 5px 10px;
+    outline: none;
+}
+.ratingNowDiv button{
+    margin: 5px 0;
+}
+.ratingNowDiv textarea{
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    outline: none;
+}
+.ofs{
+    text-decoration: none !important;
+    font-weight: bolder !important;
+    font-size: 120% !important;
+    color: tomato !important;
+}
+.ofs.white{
+    color: white !important;
+}
+
+
+
+/*  for mobile */
+@media screen and (max-width: 650px) {
+    .productDtl{
+        flex-direction: column;
+    }
+    .productDtl .images{
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+    .productDtl .images .imagesDtl{
+        flex-direction: column-reverse;
+    }
+    .productDtl .images .imagesDtl .list{
+        display: flex;
+        flex-direction: row;
+        width: calc(100% - 10px);
+        margin: 5px;
+        background: whitesmoke;
+    }
+    .productDtl .images .imagesDtl .list img{
+        width: 80px;
+        border: 1px solid grey;
+    }
+    .productDtl .images .buttons{
+        width: 100%;
+    }
+    .productDtl .details{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .productDtl .details > div.pricing{
+        width: auto !important;
+    }
+    .productDtl .details > div.pricing .minMax{
+        margin: 0;
+    }
+    .productDtl .details > div.pricing .mrp{
+        margin-left: 10px;
+    }
+    .productDtl .details > div.varients ul{
+        align-items: center;
+        justify-content: center;
+    }
+    .productDtl .details > div.ratingReview label{
+        font-size: 100%;
+        flex-direction: column;
+    }
+    .productDtl .details > div.ratingReview label span{
+        margin: 5px 0;
+    }
+    .productDtl .details > div.ratingReview label span:nth-of-type(3){
+        margin: 10px 0;
+        width: 50%;
+    }
+    .productDtl .details > div.ratingReview .allImages .imgs{
+        align-items: center;
+        justify-content: center;
+    }
+    .productDtl .details > div.ratingReview .allReviews .review{
+        text-align: left;
+    }
+}

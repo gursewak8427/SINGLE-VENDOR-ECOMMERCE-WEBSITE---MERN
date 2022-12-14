@@ -1,0 +1,693 @@
+/* https://motiongraphicsphoebe.files.wordpress.com/2018/10/giphy.gif */
+.mobSearch{
+    display: none;
+}
+.navName.a{
+    position: relative;
+}
+.navName.a:hover::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid orange;
+}
+.navName.a #accountDropDown{
+    width: auto;
+    position: absolute;
+    top: 150%;
+    left: -30%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    list-style-type: none;
+    background: orange;
+    padding: 10px;
+    border-radius: 5px;
+}
+.navName.a #accountDropDown li{
+    background: whitesmoke;
+    width: 100%;
+    padding: 5px 20px;
+    margin: 5px;
+    color: rgb(20, 20, 20);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.navName.a #accountDropDown li:hover{
+    color: black;
+}
+.navName.a:hover #accountDropDown{
+    transition: .5s;
+    display: flex;
+}
+.top{
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px -3px 15px 0px grey;
+    z-index: 20;
+}
+.top.attached{
+    position: fixed;
+    top: 0;
+}
+nav.ab.loading{
+    border-bottom: 5px solid transparent;
+}
+nav.ab.loading::before {
+    content: '';
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg,orange 50%,white 50%);
+    background-position: 100% 0%;
+    background-size: 300% 300%;
+    animation: LoadingAnimation 2.5s ease infinite;
+}
+@keyframes LoadingAnimation{
+    0% {
+        background-position: 100% 0%;
+    }
+    33% {
+        background-position: 0% 0%;
+    }
+    66% {
+        background-position: -50% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+
+}
+nav.ab {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: white;
+    border-bottom: 5px solid transparent;
+}
+nav.ab .navName{
+    font-size: 120%;
+    color: orange;
+}
+nav.ab .mainLogoBox {
+    width: 10%;
+    padding: 0 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    /* border: 1px solid black;
+    background: rgba(0, 0, 0, 0.685); */
+}
+nav.ab .searchBox {
+    width: 50%;
+    height: 40px;
+    position: relative;
+}
+nav.ab .notifyBtn{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    position: relative;
+}
+nav.ab .notifyBtn .notifyBox{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 150%;
+    right: -10px;
+    width: 0;
+    min-height: 0;
+    max-height: 0;
+    padding: 0;
+    background: whitesmoke;
+    border-radius: 5px;
+    /* animation: notifyNone 2s linear infinite; */
+    overflow: auto;
+    transition: .5s;
+    border: none;
+}
+nav.ab .notifyBtn .notifyBox::-webkit-scrollbar{
+    width: 7px;
+}
+nav.ab .notifyBtn .notifyBox.active{
+    border: 1px solid grey;
+    width: 600px;
+    min-height: auto;
+    max-height: 60vh;
+    padding: 5px;
+    transition: .5s;
+}
+nav.ab .notifyBtn .notifyBox i{
+    width: 100%;
+    text-align: center;
+}
+nav.ab .notifyBtn .notifyBox li{
+    list-style-type: none;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 80%;
+    position: relative;
+    margin: 2px 0;
+    text-transform: capitalize;
+}
+nav.ab .notifyBtn .notifyBox li.new{
+    background: rgba(255, 0, 0, 0.322);
+}
+nav.ab .notifyBtn .notifyBox .loadmore{
+    width: 100%;
+    text-align: center;
+    font-size: 90%;
+    margin: 5px 0;
+    color: grey;
+}
+nav.ab .notifyBtn .notifyBox .closeNotify{
+        text-align: right;
+        padding: 7px 10px;
+        font-size: 83%;
+        font-weight: bolder;
+        text-decoration: underline;
+}
+nav.ab .notifyBtn .notifyBox .loadmore:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+
+nav.ab .notifyBtn .notifyBox li.new::before{
+    content: 'New';
+    width: auto;
+    position: absolute;
+    font-size: 70%;
+    right: 0;
+    top: -5px;
+    margin-top: 10px;
+    transform: translate(10%, -50%);
+    background: red;
+    color: white;
+    border-radius: 50px;
+    padding: 2px 7px;
+    font-weight: bolder;
+    border: 2px solid white;
+}
+nav.ab .notifyBtn .notifyBox li > span{
+    background: red;
+}
+nav.ab .notifyBtn .notifyBox li:hover{
+    background: rgba(128, 128, 128, 0.507);
+}
+
+
+@keyframes notifyNone {
+    0%{
+        box-shadow: 10px -10px 60px 0px teal;
+    }
+    25%{
+        box-shadow: 10px -10px 60px 0px green;
+    }
+    50%{
+        box-shadow: 10px -10px 60px 0px orange;
+    }
+    100%{
+        box-shadow: 10px -10px 60px 0px teal;
+    }
+
+}
+nav.ab .notifyBtn.show::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: 77%;
+    right: 2px;
+    z-index: 999;
+}
+nav.ab .notifyBtn span{
+    display: none;
+}
+nav.ab .notifyBtn.active{
+    border: 2px solid red;
+    animation: notify 2s linear infinite;
+}
+@keyframes notify {
+    0%{
+        box-shadow: 0 0 10px 2px red;
+    }
+    50%{
+        box-shadow: 0 0 0 0 red;
+    }
+    100%{
+        box-shadow: 0 0 10px 2px red;
+    }
+}
+nav.ab .notifyBtn.active > i{
+    display: none;
+}
+nav.ab .notifyBtn.active span{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3px;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+
+nav.ab .searchBox .category {
+    width: 12%;
+    height: calc(100% - 4px);
+    position: relative;
+    z-index: 16;
+    background: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 80%;
+    color: black;
+    cursor: pointer;
+    margin: 2px;
+}
+
+nav.ab .searchBox .category .categoryList {
+    position: absolute;
+    list-style-type: none;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+nav.ab .searchBox #mainSearchField {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    padding-right: 10%;
+    padding-left: 10px;
+    border: 2px solid black;
+    background: none;
+    color: black;
+    letter-spacing: .5px;
+    outline: none;
+}
+
+nav.ab .searchBox i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 16;
+    width: 8%;
+    height: calc(100% - 4px);
+    background: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+nav.ab .searchBox i:hover {
+    background: rgba(240, 205, 49, 0.8);
+}
+
+nav.ab .accountBox {
+    width: auto;
+    margin-left: 0.5%;
+}
+
+nav.ab .accountBox>span {
+    font-size: 95%;
+    font-weight: bolder;
+}
+
+nav.ab .accountBox>span>span.signin {
+    border-radius: 20px;
+    border: 2px solid orange;
+    color: orange;
+    cursor: pointer;
+    transition: .25s;
+    padding: 8px 10px 4px 10px;
+}
+
+nav.ab .accountBox>span>span.signin:hover {
+    background: orange;
+    color: white;
+    transition: .25s;
+}
+
+nav.ab .orderBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+nav.ab .orderBox span {
+    width: 100%;
+}
+
+nav.ab .orderBox span:nth-of-type(1) {
+    font-weight: lighter;
+    font-size: 90%;
+    transform: translate(12px, 4px);
+}
+
+nav.ab .orderBox span:nth-of-type(2) {
+    font-weight: bolder;
+    font-size: 120%;
+    transform: translateY(-2px);
+}
+nav.ab .cartBox {
+    padding: 5px;
+    cursor: pointer;
+}
+nav.ab .cartBox.animate{
+    color: deeppink;
+    animation: cartBtnAnimate .5s linear forwards;
+    transition: .5s;
+}
+
+@keyframes cartBtnAnimate {
+    0%{
+        transform: rotateX(0deg) scale(1);
+    }
+    25%{
+        transform: rotateX(45deg) scale(1.5);
+    }
+    50%{
+        transform: rotateX(0deg) scale(1.5);
+    }
+    75%{
+        transform: rotateX(-45deg) scale(1.5);
+    }
+    100%{
+        transform: rotateX(0deg) scale(1);
+    }
+}
+
+
+nav.ab .cartBox i {
+    margin: 0 2px;
+    font-size: 170%;
+}
+nav.ab .cartBox span {
+    font-weight: lighter;
+}
+.links{
+    width: auto !important;
+    color: black;
+    text-decoration: none;
+}
+.links:hover{
+    text-decoration: none;
+    color: orange;
+}
+
+
+
+.menuBtn {
+    position: relative;
+    width: 50px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.menuBtn span{
+    transition: .8s;
+}
+.menuBtn span {
+    height: 3px;
+    margin: 3px 0;
+}
+.menuBtn span:nth-of-type(1) {
+    background: black;
+    width: 90%;
+}
+.menuBtn span:nth-of-type(2) {
+    background: orange;
+    width: 75%;
+}
+.menuBtn span:nth-of-type(3) {
+    background: black;
+    width: 90%;
+}
+
+.menuBtn:hover span:nth-of-type(1) {
+    background: black;
+    width: 85%;
+}
+.menuBtn:hover span:nth-of-type(2) {
+    width: 85%;
+}
+.menuBtn:hover span:nth-of-type(3) {
+    background: black;
+    width: 85%;
+}
+.menuBtn.open span{
+    position: absolute;
+}
+.menuBtn.open span:nth-of-type(1) {
+    background: red;
+    width: 85%;
+    transform: rotate(-225deg);
+}
+.menuBtn.open span:nth-of-type(2) {
+    width: 0%;
+}
+.menuBtn.open span:nth-of-type(3) {
+    background: red;
+    transform: rotate(225deg);
+    width: 85%;
+}
+.proFileBtn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/*  Toolbar */
+.toolBar{
+    padding-top: 70px;
+    width: 100%;
+    height: auto;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 90%;
+    overflow: auto;
+    margin-top: -1px;
+    padding-left: 10px;
+}
+.toolBar .all{
+    font-weight: bolder;
+}
+
+.toolBar::-webkit-scrollbar{
+    width: 0px;
+}
+.toolBar > span{
+    white-space: nowrap;
+    width: auto;
+    padding: 5px 10px 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 1px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .25s;
+    border: 1px solid transparent;
+}
+.toolBar > span:hover{
+    border-bottom: 1px solid black;
+}
+
+.toolBar > span > img{
+    width: 30px;
+    height: 30px;
+}
+a.links.a{
+    display: none;
+}
+/* Responsive */
+@media screen and (max-width: 1210px) {
+    nav.ab .searchBox .category {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    nav.ab .mainLogoBox {
+        width: 18%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    nav.ab .searchBox {
+        width: 55%;
+    }
+    nav.ab .orderBox {
+        display: none;
+    }
+}
+
+/* for mobile */
+@media screen and (max-width: 650px) {
+    .mobSearch{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: skyblue;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    nav.ab .searchBox{
+        position: absolute;
+        left: 0;
+        height: 40px;
+        width: 90%;
+        margin-left: 5%;
+        padding: 0;
+        transform: translateY(-200%);
+        transition: .5s;
+        background: whitesmoke;
+    }
+    nav.ab .searchBox.show{
+        transform: translateY(150%);
+        transition: .5s;
+    }
+
+    nav.ab .searchBox i{
+        width: 50px;
+    }
+    nav.ab .searchBox #mainSearchField{
+        padding-left: 10px;
+        padding-right: 55px;
+    }
+
+    nav.ab .accountBox,
+    nav.ab .cartBox {
+        display: none;
+    }
+    nav.ab {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    nav.ab .mainLogoBox {
+        width: 43%;
+        padding: 0;
+    }
+    .toolBar{
+        display: none;
+    }
+    .nav.av > .a{
+        display: none;
+    }
+    nav.ab .mainLogoBox {
+        padding: 10px;
+    }
+    nav.ab .notifyBtn{
+        position: fixed;
+        bottom: 100px;
+        background: white;
+        box-shadow: 0px 0px 10px 1px palevioletred;
+        border-color: palevioletred;
+        right: 0;
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 150%;
+    }
+    nav.ab .notifyBtn .notifyBox {
+        top: auto;
+        right: 0px;
+        transform: translateY(-60%) scale(1);
+        width: 300px;
+        font-size: 70%;
+        min-height: 0;
+        max-height: 0;
+        width: 0;
+        padding: 0;
+    }
+    nav.ab .notifyBtn .notifyBox.active{
+        padding: 5px; 
+        width: 300px;
+        min-height: auto;
+        max-height: 60vh;
+        transition: .5s;
+    }
+    nav.ab .notifyBtn.show::before {
+        border: 10px solid transparent;
+        border-top: 10px solid grey;
+        top: -35%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+@media screen and (min-width: 650px) {
+    a.links.a{
+        display: block;
+    }
+    .menuBtn,
+    .proFileBtn{
+        display: none;
+    }
+    nav.ab .searchBox,
+    nav.ab .accountBox,
+    nav.ab .cartBox {
+        display: block;
+    }
+  
+}

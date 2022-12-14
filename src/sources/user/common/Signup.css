@@ -1,0 +1,245 @@
+.signup,
+.login{
+    background: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 99999999;
+    width: 40%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    padding: 20px;
+    transition: .2s;
+    overflow: hidden;
+    border: 3px solid whitesmoke;
+    box-shadow: 0px 0px 50px 5px black;
+}
+.signup.open,
+.login.open{
+    transition: .4s;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+label.main{
+    font-size: 150%;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+label.main > b{
+    color: orange;
+}
+label.main > b > span{
+    font-size: 120%;
+}
+span.main{
+    margin-top: 50px;
+    width: 80%;
+    text-align: right;
+}
+span.main.ll{
+    margin-top: 10px;
+}
+span.main > span{
+    color: teal;
+    cursor: pointer;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+.crose{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: whitesmoke;
+    text-align: center;
+    font-size: 100%;
+    cursor: pointer;
+    font-weight: bolder;
+    padding-top: 2px;
+    transition: .25s;
+    z-index: 9999999999;
+}
+.crose:hover{
+    transition: .25s;
+    border-color: orange;
+    color: orange;
+}
+#numberField,
+#codeField,
+#passwordField,
+#forgotField,
+#codeFieldForgot,
+#passwordFieldForgot,
+#loginField{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    transition: .5s;
+}
+.signup #codeField{
+   position: absolute;
+   transform: translateX(100%) scale(0);
+}
+.signup #passwordField{
+    position: absolute;
+    transform: translateX(100%) scale(0);
+}
+.login #forgotField{
+    position: absolute;
+    transform: translateY(-100%) scale(0);
+}
+.login #loginField.close{
+    transform: translateY(100%) scale(0);
+}
+.login #forgotField.open{
+    transform: translateY(0) scale(1);
+}
+
+/* forgot filed */
+
+.login #codeFieldForgot{
+    position: absolute;
+    transform: translateY(-100%) scale(0);
+ }
+.login #passwordFieldForgot{
+    position: absolute;
+    transform: translateY(-100%) scale(0);
+}
+.login #codeFieldForgot.open{
+    transform: translateY(0) scale(1);
+}
+.login #passwordFieldForgot.open{
+    transform: translateY(0) scale(1);
+}
+/* ======= */
+
+
+.login #codeFieldForgot > label,
+.signup #codeField > label,
+    .signup #passwordField > label{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.login #codeFieldForgot > label > span,
+.signup #codeField label > span{
+    margin: 10px;
+    letter-spacing: 1px;
+}
+.login #codeFieldForgot > label > span > span,
+.signup #codeField label > span > span{
+    color: teal;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.signup #numberField.closeField{
+    transform: translateX(-120%);
+    transition: .5s;
+} 
+.signup #codeField.openField{
+    transform: translateX(0) scale(1);
+    transition: .5s;
+} 
+.signup #codeField.closeField{
+    transform: translateX(-100%);
+    transition: .5s;
+}
+.signup #passwordField.openField{
+    transform: translateX(0) scale(1);
+    transition: .5s;
+}
+.form-field{
+    width: 80%;
+    height: auto;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.form-field .ff{
+    color: teal;
+    text-transform: capitalize;
+    margin: 10px 0;
+    cursor: pointer;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+.form-field label{
+    width: 100%;
+    text-align: left;
+    color: black;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.form-field input{
+    align-self: center;
+    width: 100%;
+    transition: .25s;
+    padding: 10px;
+    background: none;
+    border-radius: 2px;
+    transition: .15s;
+    outline: 2px solid black;
+    font-size: 100%;
+}
+.form-field input::selection
+{
+    background: orange;
+    color: white;
+}
+.form-field input:focus{
+    width: 105%;
+    outline-color: rgba(255, 166, 0, 0.562);
+}
+
+.form-field button{
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    background: orange;
+    border-radius: 4px;
+    outline: none;
+}
+.form-field button:focus,
+    .form-field button:hover{
+    background: rgb(175, 116, 7);
+}
+
+
+@media screen and (max-width: 650px) {
+    .signup,
+    .login{
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        transform: scale(0);
+    }
+    .signup.open,
+    .login.open{
+        transition: .4s;
+        transform: scale(1);
+    }
+    .form-field{
+        width: 90%;
+    }
+}

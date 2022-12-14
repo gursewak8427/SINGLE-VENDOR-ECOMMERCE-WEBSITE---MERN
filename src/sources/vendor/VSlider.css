@@ -1,0 +1,50 @@
+.sliderList{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.sliderList .slide{
+    min-width: 120px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+}
+.sliderList .slide img{
+    width: 100px;
+    height: auto;
+}
+
+.sliderList .slide span{
+    width: 100%;
+    margin: 10px;
+    color: white;
+    text-align: center;
+}
+.sliderList .slide .btns{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin:5px 0;
+}
+.sliderList .slide .btns i{
+    margin: 0 5px;
+    cursor: pointer;
+}
+.sliderList .slide .btns i.update{
+    color: teal;
+}
+.sliderList .slide .btns i.delete{
+    color: lightcoral;
+}
+
+
+
+
+

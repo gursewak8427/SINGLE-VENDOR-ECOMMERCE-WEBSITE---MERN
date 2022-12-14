@@ -1,0 +1,51 @@
+.v-login{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: whitesmoke;
+    z-index: 99999;
+}
+
+.v-login .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 60vh;
+    padding: 40px 20px;
+    background: white;
+}
+.v-login .form > label{
+    font-size: 150%;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+.v-login .form > label span{
+    color: orange;
+    font-weight: bolder;
+}
+
+
+.v-login .form button{
+    margin-right: 10px;
+}
+
+@media screen  and (max-width: 650px){
+    .v-login .form{
+        width: 90%;
+        height: 80vh;
+        text-align: center;
+    }
+    .v-login .form > label{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

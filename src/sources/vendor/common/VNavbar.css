@@ -1,0 +1,168 @@
+.v-nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 70px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 25px;
+    background: transparent;
+    z-index: 100000;
+}
+.v-nav.loading::before {
+    z-index: 999999;
+    content: '';
+    width: 100%;
+    height: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,white 50%,orange 50%);
+    background-position: 100% 0%;
+    background-size: 300% 300%;
+    animation: LoadingAnimation 3.2s ease infinite;
+}
+@keyframes LoadingAnimation{
+    0% {
+        background-position: 100% 0%;
+    }
+    33% {
+        background-position: 0% 0%;
+    }
+    66% {
+        background-position: -50% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+
+}
+.v-nav .sideToggle{
+    width: 50px;
+    height: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    /* set to flex on mobile */
+    display: none;
+}
+.v-nav .sideToggle span{
+    width: 80%;
+    height: 2px;
+    background: white;
+    margin: 3px;
+    transform-origin: center;
+    transition: .35s;
+}
+.v-nav .sideToggle.open span{
+    position: absolute;
+    transition: .35s;
+}
+.v-nav .sideToggle.open span:nth-of-type(1){
+    transform: rotate(225deg);
+}
+.v-nav .sideToggle.open span:nth-of-type(2){
+    display: none;
+}
+.v-nav .sideToggle.open span:nth-of-type(3){
+    transform: rotate(-45deg);
+}
+.v-nav .profileBtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSXqCTNg8NsLfXWwiZ4oKej4HSuu3mimkYKHgDKAEYAZdmlVfB0M22Iry6EqPxM6AmDuE&usqp=CAU');
+    background-size: 100%;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+.v-nav .profileBtn .list{
+    position: absolute;
+    top: 160%;
+    right: 5px;
+    min-width: 150px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+    box-shadow: 0px 0px 12px 2px grey;
+}
+.v-nav .profileBtn .list::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 5px;
+    transform: translateY(-100%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid white;
+}
+
+.v-nav .profileBtn .list li{
+    width: 100%;
+    list-style-type: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.v-nav .profileBtn .list li i{
+    padding: 6px 10px 10px 10px;
+}
+.v-nav .profileBtn .list li span{
+    letter-spacing: 2px;
+}
+.v-nav .profileBtn .list li:hover i,
+    .v-nav .profileBtn .list li:hover span{
+    font-weight: bolder;
+    color: palevioletred;
+}
+.v-nav .profileBtn .list li:hover{
+    background: whitesmoke;
+}
+/* visibility of profile floating menu */
+.v-nav .profileBtn.open .list{
+    display: flex;
+    animation: fadein .25s linear 1;
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+        top: 180%;
+    }
+    100%{
+        opacity: 1;
+        top: 160%;
+    }
+}
+
+
+
+@media screen and (max-width: 650px) {
+    .v-nav{
+        justify-content: space-between;
+    }
+    .v-nav .sideToggle{
+        display: flex;
+    }
+}

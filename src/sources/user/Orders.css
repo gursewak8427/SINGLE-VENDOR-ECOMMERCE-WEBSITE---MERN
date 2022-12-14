@@ -1,0 +1,426 @@
+.wrapper.mt-10{
+    margin: 20px auto !important;
+    padding-top: 15px;
+    border-radius: 10px;
+}
+.orders{
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+.dtl{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+.dtl > span{
+    padding: 1px;
+}
+.dtl > span span{
+    margin-right: 10px;
+}
+.dtl > span span:nth-child(1){
+    font-weight: bolder;
+}
+
+.orders .left{
+    width: 70%;
+    padding: 20px;
+    background: whitesmoke;
+}
+.orders .left .emptyOrder{
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+}
+.orders .left .emptyOrder img{
+    width: 40%;
+    margin: 0 10px;
+}
+.orders .left .emptyOrder .data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align-last: left;
+    padding-left: 20px;
+}
+.orders .left .emptyOrder .data span.a{
+    font-size: 140%;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    padding:5px 20px;
+}
+.orders .left .emptyOrder .data span.b{
+    text-decoration: none;
+    padding:0px 20px;
+    color: darkcyan;
+}
+/* order-single */
+.order{
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+    margin-top: -18px;
+    margin-bottom: 38px;
+    border: 3px solid grey;
+}
+.order.active{
+    box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.4);
+}
+.order:hover{
+    border: 4px solid orange;
+}
+.order .top{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    box-shadow: none;
+    z-index: inherit;
+}
+.order .top span.status{
+    cursor: pointer;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    font-size: 90%;
+}
+.order .top span.status:hover{
+    opacity: .7;
+}
+
+
+.order .top .status span.a{
+    color: rgb(255, 0, 0);
+}
+.order .top .status span.b{
+    color: rgb(255, 196, 0);
+}
+.order .top .status span.c{
+    color: rgb(8, 245, 114);
+}
+.order .top .status span.d{
+    color: rgb(0, 119, 255);
+}
+
+.order .items{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.order .items .item{
+    min-width: 96%;
+    height: auto;
+    margin: 10px 2%;
+    padding: 10px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: hidden;
+    /* border: 1px solid grey; */
+}
+.order .items .item:hover{
+    box-shadow: 0px 0px 15px -1px rgba(214, 213, 213, 0);
+    /* border: 1px solid orange; */
+    background: rgba(128, 128, 128, 0.281);
+}
+.order .items .item .left{
+    width: 200px;
+    padding: 0;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+.order .items .item .left img{
+    padding: 0;
+    min-width: 100%;
+    max-width: 100%;
+}
+.order .items .item .contentF{
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.order .items .item .contentF span{
+    font-size: 100%;
+    text-align: left;
+}
+.order .items .item .contentF span span.attributes{
+    font-size: 90%;
+    margin: 0 5px;
+    color: black;
+    font-weight: bolder;
+}
+
+/* right */
+.right.orderDetail{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: whitesmoke;
+}
+.right.orderDetail .box{
+    position: sticky;
+    top: 15%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 5px;
+    padding-bottom: 50px;
+    background: white;
+    box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.4);
+}
+.right.orderDetail .box > span{
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 90%;
+    font-weight: bolder;
+}
+.right.orderDetail .box > span::-webkit-scrollbar{
+    visibility: hidden;
+}
+
+.right.orderDetail .box > span > span{
+    font-size: 100%;
+    color: orange;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.right.orderDetail .box .contentd{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.right.orderDetail .box .data{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.right.orderDetail .box .data li span{
+    position: absolute;
+    top: 23px;
+    font-size: 70%;
+    font-weight: lighter;
+    color: black;
+}
+
+.right.orderDetail .box .line{
+    width: 6px !important;
+    height: 100%;
+    background: grey;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.right.orderDetail .box .line span{
+    width: 100%;
+    background: rgb(9, 223, 158);
+}
+.right.orderDetail .box .line.one span{
+    height: 6%;
+}
+.right.orderDetail .box .line.two span{
+    height: 37%;
+}
+.right.orderDetail .box .line.three span{
+    height: 68.5%;
+}
+.right.orderDetail .box .line.four span{
+    height: 100%;
+}
+
+.right.orderDetail .box li{
+    width: 98%;
+    margin-bottom: -4px;
+    height: auto;
+    list-style-type: none;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    margin-left: 50px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+}
+.right.orderDetail .box li::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    left: -22px;
+    top: 0;
+    transform: translateX(-100%);
+}
+
+.right.orderDetail .box li.active-1{
+    color: rgb(255, 0, 0);
+}
+.right.orderDetail .box li.active-2{
+    color: rgb(255, 196, 0);
+}
+.right.orderDetail .box li.active-3{
+    color: rgb(0, 119, 255);
+}
+.right.orderDetail .box li.active-4{
+    color: rgb(8, 245, 114);
+}
+.right.orderDetail .box li.active-1::before,
+.right.orderDetail .box li.active-2::before,
+.right.orderDetail .box li.active-3::before,
+    .right.orderDetail .box li.active-4::before{
+        background: rgb(9, 223, 158);
+}
+.right.orderDetail .box li.now::before{
+        background: rgb(38, 238, 178);
+        animation: dot 2s linear infinite;  
+}
+
+
+.crose.d{
+    display: none;
+}
+
+@keyframes dot{
+    0%{
+        box-shadow: 0px 0px 0px 1px transparent;
+    }
+    50%{
+        background: rgb(80, 230, 185);
+        box-shadow: 0px 0px 15px 4px rgb(86, 231, 188)
+    }
+    100%{
+        box-shadow: 0px 0px 0px 1px transparent;
+    }
+}
+.right.orderDetail .box li.mb-80{
+    margin-bottom: 80px;
+}
+.getBill{
+    padding: 3px 20px !important;
+    border-radius: 5px;
+    margin: 5px 0;
+    background: whitesmoke;
+    text-align: center;
+    cursor: pointer;
+}
+.getBill:hover{
+    background: rgb(233, 229, 229);
+}
+
+@media screen and (max-width: 650px) {
+    .orders{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 80vh;
+    }
+    .orders .left{
+        width: 100%;
+        padding: 0;
+    }
+    .orders .left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .order{
+        width: 98%;
+        margin: 10px 0;
+        margin-top: 35px;
+    }
+    .order .items .item{
+        max-width: 100%;
+        min-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px;
+    }
+    .order .items .item img{
+        margin-bottom: 10px;
+        min-width: 100%;
+    }
+
+    .right.orderDetail{
+        width: 100%;
+        min-height: calc(100vh - 68px);
+        max-height: calc(100vh - 68px);
+        overflow: auto;
+        position: fixed;
+        bottom: 0;  
+        left: 0;
+        padding: 10px;
+        z-index: 999999999999;
+        transform: scale(0);
+        transition: .5s;
+    }
+    .right.orderDetail.openDtl{
+        transform: scale(1);
+        transition: .5s;
+    }
+    .right.orderDetail .box{
+        width: 100%;
+        height: 80vh;
+        padding: 20px;
+        margin: 0;
+    }
+    .right.orderDetail .box .contentd{
+        padding: 20px 0;
+    }
+    .crose.d{
+        display: block;
+        background: grey;
+        color: white;
+    }
+
+}

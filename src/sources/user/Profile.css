@@ -1,0 +1,126 @@
+.userProfile{
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin: 20px 0;
+}
+.userProfile .left{
+    width: 25%;
+    height: 100%;
+    list-style-type: none;
+    background: rgba(245, 245, 245, 0.384);
+}
+.userProfile .left li{
+    width: 100%;
+    padding: 10px 20px;
+    background: whitesmoke;
+    margin: 2px 0;
+    cursor: pointer;
+    transition: .25s;
+}
+.userProfile .left li:hover{
+    background: rgba(194, 191, 191, 0.562);
+    transition: .15s;
+}
+.userProfile .left li.active{
+    background: rgb(155, 153, 153);
+}
+
+.userProfile .right{
+    width: 70%;
+    height: 100%;
+}
+.userProfile .right .box{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: whitesmoke;
+    padding: 20px;
+    margin-left: 7px;
+}
+.userProfile .right .box.active{
+    display: flex;
+}
+.userProfile .right .box > label{
+    font-weight: bolder;
+    font-size: 100%;
+    align-self: flex-end;
+    transform: translateY(-10px);
+}
+.userProfile .right .box > label > span{
+    font-size: 150%;
+}
+.userProfile .right .box .formProfile{
+    width: 70%;
+    color: black;
+}
+.userProfile .right .box .formProfile .form-area label{
+    color: rgb(49, 49, 49);
+    font-size: 90%;
+}
+.userProfile .right .box .formProfile .form-area input{
+    border-color: rgb(49, 49, 49);
+    color: black;
+}
+.userProfile .right .box .formProfile > button{
+    padding: 5px 20px;  
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* fir mobile phone */
+@media screen and (max-width: 650px) {
+    .userProfile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .userProfile .left,
+        .userProfile .right{
+            width: 100%;
+    }
+    .userProfile .left{
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        align-items: center;
+        justify-content: center;
+        background: whitesmoke;
+    }
+    .userProfile .left li{
+        width: auto;
+        background: transparent;
+    }
+    .userProfile .left li:hover{
+        background: transparent;
+    }
+
+    .userProfile .left li.active{
+        background: transparent;
+        font-weight: bolder;
+        letter-spacing: 1px;
+    }
+    .userProfile .right .box > label{
+        width: 100%;
+        text-align: center;
+    }
+
+    .userProfile .right .box{
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .userProfile .right .box .formProfile{
+        width: 90%;
+    }
+}

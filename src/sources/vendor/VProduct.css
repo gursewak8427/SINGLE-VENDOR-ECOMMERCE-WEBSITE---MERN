@@ -1,0 +1,278 @@
+.v-product{
+    width: 100%;
+    min-height: 100vh;
+    padding: 12px;
+    margin-top: 50px;
+    z-index: 999;
+    font-size: 100%;
+    background: whitesmoke;
+    border-radius: 6px;
+    box-shadow: 0px 0px 15px 0px grey;
+    position: relative;
+}
+.v-product.white{
+    background: #fafaff;
+}
+.v-product h1.label{
+    width: 100%;
+    text-align: left;
+    height: auto;
+    padding: 5px;
+    font-size: 120%;
+    letter-spacing: 2px;
+}
+.v-product .product-content{
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    margin: 0 auto;
+    background: #262d47e1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    transition: .5s;
+}
+.product-content.animate {
+    opacity: 0;
+    transition: .5s;
+    animation: shake 0.5s 1 linear forwards;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+.v-product .product-content .notFound{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 150%;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+
+/* Bottom Buttons */
+.bottom_btns{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    z-index: 999999;
+}
+.bottom_btns .continue_btn{
+    background: #d87093;
+    color: white;
+    min-width: 55px;
+    width: auto;
+    padding: 0 10px;
+    height: 50px;
+    font-size: 120%;
+    border: none;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px 1px #d87093;
+    margin: 10px;
+}
+.bottom_btns .continue_btn:hover{
+    background: #0000006b;
+    box-shadow: 0px 0px 10px 1px #0000006b;
+ }
+.bottom_btns  .continue_btn span{
+    padding-top: 3px;
+    margin-right: 10px;
+}
+.bottom_btns .add_new{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background: skyblue;
+    border-radius: 50%;
+    font-size: 300%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(0deg);
+    transition: .5s;
+}
+.bottom_btns .add_new.open{
+    transform: rotate(225deg);
+    transition: .5s;
+}
+.add_new:hover{
+    background: #0000006b;
+    color: #fff;
+    transition: .25s;
+}
+.product_for{
+    color: white;
+    width: 100%;
+    font-size: 100%;
+    padding: 13px 20px;
+}
+
+
+/*  add category and add sub-category */
+.addCat{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    width: 40%;
+    height: auto;
+    padding: 40px 20px;
+    background: #262d47;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: .5s;
+    box-shadow: 0px 0px 20px 0px #111111c9;
+    z-index: 999999;
+}
+.addCat.show{
+    transform: translate(-50%,-50%) scale(1);
+    transition: .5s;
+}
+.addCat .form-area {
+    width: 90%;
+    text-align: center;
+}
+.addCat .form-area label{
+    width: 100%;
+}
+.addCat .form-area input{
+    font-size: 90%;
+}
+.addCat .form-area > button{
+    width: 100%;
+    background: rgb(1, 250, 167) !important;
+    color: rgb(14, 14, 14) !important;
+} 
+.addCat .form-area > button:hover{
+    background: rgb(11, 190, 131) !important;
+}
+
+.form-area{
+    width: 95%;
+    height: auto;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.form-area.radio > div{
+    width: 100%;
+}
+.form-area.radio > div > label{
+    color: white;
+}
+.form-area.radio > div > input{
+    margin: 10px;
+}
+
+.form-area .select{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.form-area .select .option{
+    margin: 10px;
+    display: flex;
+    font-display: row;
+    align-items: center;
+    justify-content: center;
+}
+.form-area .select .option > label{
+    background: white;
+    color: #262d47;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 80%;
+    padding-top: 9px;
+}
+.form-area .select .option > label:hover{
+    filter: opacity(.8);
+    transition: .25s;
+    cursor: pointer;
+}
+.form-area .select .option > label.selected{
+    background: palevioletred;
+    color: white;
+}
+.form-area .select .option input{
+    visibility: hidden;    
+}
+.form-area > label{
+    color: white;
+    font-size: 120%;
+    text-transform: capitalize;
+}
+.form-area input.a,
+    .form-area > input{
+    width: 100%;
+    background: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    padding: 5px;
+    font-size: 120%;
+}
+
+@media screen and (max-width:650px) {
+    .v-product{
+        padding: 0;
+    }
+    .addCat{
+        width: 90%;
+        padding: 0;
+    }
+    .bottom_btns{
+        right: 20px;
+    }    
+    .form-area input.a,
+    .form-area > input{
+        font-size: 100%;
+    }
+    .v-product h1.label{
+        font-size: 100%;
+        margin: 5px;
+    }
+}
+

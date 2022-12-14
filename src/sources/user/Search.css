@@ -1,0 +1,507 @@
+.searchResultDiv{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.itemLabel{
+    margin: 10px !important;
+    display: block !important;
+}
+.searchResultDiv .left{
+    position: sticky;
+    top: 100px;
+    left: 0;
+    width: 20%;
+    max-height: 100vh;
+    border-right: 1px solid #8080807e;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+/* filter design */
+.searchResultDiv .left > label{
+    width: 100%;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    color: grey;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+
+}
+.searchResultDiv .left .categoryList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+.searchResultDiv .left label.filterMain{
+    width: 100%;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin: 0;
+}
+.searchResultDiv .left .categoryList li{
+    width: 100%;
+    text-transform: capitalize;
+    cursor: pointer;
+    color:  grey;
+    font-size: 90%;
+    margin: 2px 0;
+    letter-spacing: 1px;
+}
+.searchResultDiv .left .categoryList li.active{
+    color: #ff4700;
+}
+.searchResultDiv .left .categoryList li:hover{
+    color: #e78057;
+}
+.searchResultDiv .left .priceRange{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.searchResultDiv .left .priceRange > span{
+    display: flex;
+    margin: 2px 0;
+}
+.searchResultDiv .left .priceRange > div{
+    color: teal;
+    width: auto;
+    align-self: flex-end;
+    font-size: 100%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.searchResultDiv .left .priceRange > div:hover{
+    width: auto;
+    color: rgb(173, 133, 4);
+    transition: .5s;
+}
+
+.searchResultDiv .left .priceRange > span span{
+    text-transform: capitalize;
+    cursor: pointer;
+    color:  grey;
+    font-size: 90%;
+    margin: 1px 0;
+    letter-spacing: 1px;
+    width: 20%;
+}
+.searchResultDiv .left .priceRange > span input{
+    width: 80%;
+    margin: 0 10px;
+    border-bottom: 1px solid grey;
+    outline: none;
+    padding: 2px 5px;
+    font-size: 90%;
+}
+
+
+
+
+
+
+
+
+.searchResultDiv .right{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;    
+}
+.searchResultDiv .right .items{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;    
+    flex-wrap: wrap;    
+}
+
+.categoryTop .list li{
+    margin: 0px 5px;
+    padding: 3px 10px;
+    text-transform: capitalize;
+    font-size: 90%;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: pre;
+}
+.categoryTop .list li.active{
+    border: 1px groove white;
+    color: black;
+    background: rgba(255, 255, 255, 0.753);
+}
+.categoryTop .list li.active:hover{
+    border: 1px groove white;
+    color: black;
+}
+.categoryTop .list li:hover{
+    border: 1px solid white;
+    color: white;
+}
+.itemsResults .item{
+    min-width: 215px;
+    max-width: 215px;
+    height: auto;
+    margin: 20px 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.itemsResults .item .top{
+    width: 100%;
+    min-height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+    z-index: inherit !important;
+}
+.itemsResults .item .top .wishBtn{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-size: 120%;
+}
+.itemsResults .item:hover{
+    box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.37),
+                0px 0px 10px -2px rgba(128, 128, 128, 0.384);
+}
+
+.itemsResults .item img{
+    width: 100%;
+    height: auto;
+}
+.itemsResults .item .name{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    padding: 3px 0;
+}
+.itemsResults .item:hover .name{
+    background: rgba(0, 0, 0, 0.171);
+}
+.itemsResults .item .topDetails{
+    max-width: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;        
+    background: whitesmoke;
+    transform: translateY(-100%);
+    transition: .25s;
+}
+.itemsResults .item .topDetails span.clear{
+    font-size: 60%;
+    width: 100%;
+    text-align: right;
+    padding: 3px 3px 1px;
+    color: red;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.itemsResults .item:hover .topDetails{
+    transform: translateY(0%);
+    transition: .25s;
+}
+.itemsResults .item .topDetails .rowAttrs{
+    max-width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+}
+.itemsResults .item .topDetails .rowAttrs label{
+    width: 100%;
+    margin: 0;
+    background: rgb(204, 202, 202);
+    padding: 0 5px;
+    font-size: 80%;
+    text-decoration: underline;
+}
+
+
+.itemsResults .item .topDetails .rowAttrs ul{
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    margin: 0;
+}
+.itemsResults .item .topDetails .rowAttrs ul::-webkit-scrollbar{
+    visibility: hidden;
+}
+.itemsResults .item .topDetails .rowAttrs ul li{
+    margin: 2px;
+    padding: 1px 7px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 70%;
+    padding-top: 4px;
+    background: rgb(236, 232, 232);
+    border: 1px solid grey;
+}
+.itemsResults .item .topDetails .rowAttrs ul li.disabled{
+    pointer-events: none;
+    /* for "disabled" effect */
+    opacity: 0.5;
+    background: #CCC;
+    border: 1px dotted grey;
+}
+
+.itemsResults .item .topDetails .rowAttrs ul li:hover{
+    background: rgb(187, 186, 186);
+}
+.itemsResults .item .topDetails .rowAttrs ul li.active{
+    background: rgb(15, 207, 133);
+    color: white;
+}
+.itemsResults .item .details{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: orange;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(110%);
+    transition: .15s;
+}
+.itemsResults .item:hover .details{
+    transform: translateY(0);
+    transition: .15s;
+}
+.itemsResults .item .details .pricing{
+    width: 100%;
+    height: auto;
+    font-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    font-weight: bolder;
+}
+.itemsResults .item .details .pricing span{
+    width: 100%;
+    margin: 2px;
+    letter-spacing: 1px;
+}
+.itemsResults .item .details .pricing span.cut{
+    text-decoration: line-through;
+    font-size: 85%;
+    margin-left: 5px;
+}
+.itemsResults .item .details .btns{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top:10px;
+    background: white;
+}
+.itemsResults .item .details .btns button{
+    padding: 5px;
+    padding-top: 7px;
+    width: 100%;
+    background: whitesmoke;
+    font-size: 95%;
+}
+.itemsResults .item .details .btns button:hover{
+    background: rgba(128, 128, 128, 0.582);
+}
+
+.sortingSearchItems{
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 90%;
+}
+.sortingSearchItems label{
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.sortingSearchItems > ul{
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: white;
+    z-index: 99999;
+    box-shadow: 0px 0px 10px -2px black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.sortingSearchItems.active > ul{
+    display: flex;
+}
+.sortingSearchItems > ul span{
+    font-size: 95%;
+    width: 100%;
+    cursor: pointer;
+    padding: 5px 10px;
+    padding-right: 30px;
+}
+.sortingSearchItems > ul span:hover{
+    background: whitesmoke;
+}
+.sortBtnFixed{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    background: teal;
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bolder;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px -1px white;
+    z-index: 99999999;
+}
+.sortBtnFixed span:nth-of-type(1){
+    display: block;
+}
+.sortBtnFixed span:nth-of-type(2){
+    display: none;
+}
+.sortBtnFixed.active span:nth-of-type(1){
+    display: none;
+}
+.sortBtnFixed.active span:nth-of-type(2){
+    display: block;
+}
+
+
+/*  for mobile  */
+@media screen and (max-width: 650px) {
+    .sortBtnFixed{
+        display: flex;
+    }
+    .searchResultDiv{
+        display: flex;
+        flex-direction: column;
+    }
+    .searchResultDiv .left{
+        width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        z-index: 99999;
+        position: fixed;
+        top: 0;
+        overflow: auto;
+        transform:scale(0);
+        z-index: 9999999;
+        background: whitesmoke;
+        transition: .5s;
+        text-align: center;
+        align-items: center;
+        font-size: 130%;
+    }
+    .searchResultDiv .left label.filterMain{
+        font-weight: bolder;
+        font-size: 110%;
+        border-bottom: 1px solid grey;
+    }
+    .searchResultDiv .left .categoryList{
+        margin: 10px 0;
+    }
+    .searchResultDiv .left .categoryList li{
+        margin: 5px 0;
+    }
+    .searchResultDiv .left .priceRange{
+        margin: 10px 0;
+    }
+    .searchResultDiv .left .priceRange > span{
+        margin: 10px 0;
+    }
+    .searchResultDiv .left.active{
+        transform: scale(1);
+        transition: .5s;
+    }
+    .searchResultDiv .right{
+        width: 100%;
+    }
+
+
+    .itemsResults .item{
+        border-radius: 0;
+        margin: 10px 5px;
+        min-width: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+    .itemsResults .item .details{
+        font-size: 79%;
+        background: grey;
+    }
+    .itemsResults .item .details .btns{
+        display: none;
+    }
+    .itemsResults .item .details .pricing span.off{
+        display: none;
+    }    
+    .itemsResults .item .topDetails{
+        display: none;
+    }
+    .itemsResults .item .details{
+        position: relative;
+        transform: translateY(0%);
+        border-radius: 0;
+    }
+    .itemsResults .item:hover{
+        box-shadow: none;
+    }
+}
+
+

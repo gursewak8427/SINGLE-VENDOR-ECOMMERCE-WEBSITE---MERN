@@ -1,0 +1,70 @@
+::-webkit-scrollbar{
+    width: 13px;
+    background: white;    
+}
+::-webkit-scrollbar-thumb{
+    border: 2px solid white;
+    background: linear-gradient(white,#262d47,#262d47,#262d47,#262d47, white);
+}
+.textNoFound{
+    color: white;
+    width: 100%;
+    margin: 10px 0px;
+    text-align: center;
+    font-size: 147%;
+    text-transform: capitalize;
+}
+.vHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.vHeader .img{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #fafaff;
+}
+.vHeader .img img{
+    width: 60%;
+}
+.vHeader > h1{
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    color: skyblue;
+    letter-spacing: 1px;    
+}
+.vHeader > h2{
+    font-size: 120%;
+    text-transform: uppercase;
+    margin: 10px;
+    border: 1px solid skyblue;
+    padding: 7px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .5s;
+    color: skyblue;
+    font-weight: 600;
+}
+.vHeader > h2:hover{
+    color: white;
+    background: skyblue;
+    transition: .5s;
+}
+
+@media screen and (max-width: 650px) {
+    .vHeader .img img{
+        width: 100%;
+    }
+    .vHeader > h1{
+        font-size: 120%;
+    }
+
+}

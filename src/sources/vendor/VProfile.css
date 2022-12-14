@@ -1,0 +1,84 @@
+.form.profile{
+    width: 60%;
+    padding: 10px;
+    margin-top: 10px;
+}
+.mainLabelName{
+    font-weight: bolder;
+    font-size: 120%;
+    text-align: right;
+    padding-right: 20px;
+}
+.form.profile .form-field{
+    width: 100%;
+    padding: 10px;
+}
+.form.profile .form-field input{
+    width: 100%;
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: 20px !important;
+    outline: none;
+}
+.form.profile .form-field input:hover,
+    .form.profile .form-field input:focus{
+    width: 100%;
+    border: 1px solid orange;
+}
+.password-change > label{
+    width: 100%;
+    font-weight: bolder;
+    font-size: 120%;
+    border-bottom: 1px solid #000;
+}
+.form-field.vender{
+    margin: 0 !important;
+}
+.form.profile button{
+    border-radius: 20px !important;
+    width: auto;
+    padding: 4px 40px;
+    margin-top: 0;
+}
+
+.password-change > .form-field label{
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+
+
+
+
+.cod-option{
+    width: 100%;
+    padding: 10px 0;
+}
+.cod-option label{
+    margin: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 15px;
+}
+.cod-option button{
+    padding: 5px 10px !important;
+    color: white;
+    border-radius: 5px;
+}
+.cod-option button.a{
+    background: teal;
+}
+.cod-option button.d{
+    background: red;
+}
+
+@media screen and (max-width: 650px) {
+    .form.profile{
+        width: 100%;
+    }
+    .cod-option{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
