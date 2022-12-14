@@ -63,14 +63,17 @@ function App({ props }) {
             console.log('imhere...dfd-err 1', err)
             setPageLoading(false)
           })
+      } else {
+        setPageLoading(false)
       }
     } else {
-
+      setPageLoading(false)
     }
 
     if (adminToken) {
       if (window.location.href.split("/")[window.location.href.split("/").length - 1] == "login") {
         window.location.href = "/vendor/"
+        setPageLoading(false)
         return;
       }
     }
@@ -90,15 +93,18 @@ function App({ props }) {
               type: 'SET_ADMIN',
               data: result.data.user
             })
+            setPageLoading(false)
 
           }).catch(err => {
             console.log('imhere...dfd-err 2', err)
 
+            setPageLoading(false)
           })
       } else {
 
         console.log("Redirect")
         window.location.href = '/vendor/login'
+        setPageLoading(false)
       }
     } else {
 
